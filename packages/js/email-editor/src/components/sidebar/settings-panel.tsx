@@ -17,6 +17,11 @@ const SidebarExtensionComponent = applyFilters(
 	RichTextWithButton
 ) as () => JSX.Element;
 
+const EmailStatusComponent = applyFilters(
+	'woocommerce_email_editor_setting_sidebar_email_status_component',
+	() => null
+) as () => JSX.Element;
+
 export function SettingsPanel() {
 	return (
 		<PanelBody
@@ -27,6 +32,7 @@ export function SettingsPanel() {
 			}
 		>
 			<>
+				{ <EmailStatusComponent /> }
 				<TemplateSelection />
 				{ <SidebarExtensionComponent /> }
 			</>
